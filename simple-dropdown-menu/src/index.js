@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ProfileImageUploader from './ProfileImageUploader';
+import SimpleDropdownMenu from './SimpleDropdownMenu';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<ProfileImageUploader />, document.getElementById('root'));
+ReactDOM.render(<SimpleDropdownMenu />, document.getElementById('root'));
 registerServiceWorker();
