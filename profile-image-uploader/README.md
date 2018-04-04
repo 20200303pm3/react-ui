@@ -21,14 +21,14 @@
 2. `superagent`: HTTP Request를 보내기 위해 사용. 서버로 부터 이미지 url을 받아오기 위해 사용한다.
 3. Cloudinary: 이미지를 올릴 서버
 
-### Cloudinary 설정
+### 1. Cloudinary 설정
 먼저, [Cloudinary](https://cloudinary.com/)에 들어가서 회원가입을 한다. Cloudinary에서는 무료 플랜을 제공하니 그걸 이용할 예정. 회원가입을 완료하면, **Dashboard > Settings > Upload > Upload presets의 Add upload presets**를 클릭한다. Mode가 Signed로 되어 있을 텐데, 이를 **Unsigned**로 변경하고 저장한다. 그래야 별도의 로그인 없이 이미지를 서버에 업로드/저장할 수 있기 때문이다.
 
 그럼 아래와 같이 될 것인데, 여기 Preset Name을 복사한다.
 
 ![Copy Preset Name](https://user-images.githubusercontent.com/19285811/38290486-5fde9864-3816-11e8-8579-ec3bb06eed8a.png)
 
-### create-react-app profile-image-uploader
+### 2. `create-react-app profile-image-uploader`
 본격적으로 리액트 앱을 만들어 보자. `create-react-app`을 통해 새로운 프로젝트를 만든다. 그리고 `superagent`를 설치한다.
 
 ```bash
@@ -37,6 +37,7 @@ $ cd profile-image-uploader
 $ npm i superagent
 ```
 
+### 3. 리액트 컴포넌트 기본 골격 잡기
 `App.js` 이름을 편의상 `ProfileImageUploader.js`로 이름을 변경했다. 그리고 리액트 컴포넌트의 기본 골격을 잡아준다. 그리고 우리가 사용할 Cloudinary 설정값도 변수에 함께 지정해주자.
 
 ```javascript
@@ -102,6 +103,7 @@ render () {
 }
 ```
 
+### 4. state 관리
 여기까지 했으면 이제 `state` 관리를 해주자. 사용자가 올린 이미지 파일은 `uploadedFile`에, 서버에 이미지를 저장한 후 이미지 url은 `uploadedFileCloudinaryUrl`에 담을 것이다. 먼저 defaultState값을 설정하자.
 
 ```javascript
@@ -119,6 +121,7 @@ class ProfileImageUploader extends React.Component {
 }
 ```
 
+### 5. 서버에 이미지 업로드하기
 사용자가 파일을 올렸을 때 해당 파일을 `uploadedFile` 스테이트에 저장하는 로직을 만들자. 파일이 올라갔을 때는 `onChange` 이벤트로 알 수 있다. 
 ```javascript
 uploadFile = () => {
@@ -184,6 +187,7 @@ handleImageUpload = (file) => {
 }
 ```
 
+### 6. Conditional Rendering
 마지막으로 `this.state.uploadedFileCloudinaryUrl`의 유무에 따라 다른 `<div/>`를 렌더하는 로직을 추가한다.
 
 ```javascript
