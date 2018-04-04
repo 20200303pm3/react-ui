@@ -21,6 +21,7 @@
 2. `superagent`: HTTP Request를 보내기 위해 사용. 서버로 부터 이미지 url을 받아오기 위해 사용한다.
 3. Cloudinary: 이미지를 올릴 서버
 
+## 3. 시작!
 ### 1. Cloudinary 설정
 먼저, [Cloudinary](https://cloudinary.com/)에 들어가서 회원가입을 한다. Cloudinary에서는 무료 플랜을 제공하니 그걸 이용할 예정. 회원가입을 완료하면, **Dashboard > Settings > Upload > Upload presets의 Add upload presets**를 클릭한다. Mode가 Signed로 되어 있을 텐데, 이를 **Unsigned**로 변경하고 저장한다. 그래야 별도의 로그인 없이 이미지를 서버에 업로드/저장할 수 있기 때문이다.
 
