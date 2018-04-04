@@ -26,6 +26,8 @@
 
 그럼 아래와 같이 될 것인데, 여기 Preset Name을 복사한다.
 
+![Copy Preset Name](https://user-images.githubusercontent.com/19285811/38290486-5fde9864-3816-11e8-8579-ec3bb06eed8a.png)
+
 ### create-react-app profile-image-uploader
 본격적으로 리액트 앱을 만들어 보자. `create-react-app`을 통해 새로운 프로젝트를 만든다. 그리고 `superagent`를 설치한다.
 
